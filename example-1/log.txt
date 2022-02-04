@@ -1,0 +1,54 @@
+ubuntu@fa2f9af0fac8:/bootstrap-microservices/chapter-2$ cd example-1/
+ubuntu@fa2f9af0fac8:/bootstrap-microservices/chapter-2/example-1$ npm init -y
+Wrote to /bootstrap-microservices/chapter-2/example-1/package.json:
+
+{
+  "name": "example-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+
+ubuntu@fa2f9af0fac8:/bootstrap-microservices/chapter-2/example-1$ npm install express --save
+
+added 50 packages, and audited 51 packages in 1s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+ubuntu@fa2f9af0fac8:/bootstrap-microservices/chapter-2/example-1$ cat package.json
+{
+  "name": "example-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
+ubuntu@fa2f9af0fac8:/bootstrap-microservices/chapter-2/example-1$
+
+ubuntu@1e2b49c3d514:/bootstrap-microservices/chapter-2/example-1$ node index.js
+Example app listening on port 3000
+
+
+from another session ->>>>>>>
+ubuntu@ubuntu-jenkins:/voljenkins/test/github/bootstrapping-microservices-ibmcloud/chapter-2/example-1$ docker exec -it 1e2b49c3d514 bash
+ubuntu@1e2b49c3d514:/bootstrap-microservices/chapter-2$ ls
+LICENSE  README.md  docker-compose.yml  example-1  my-new-project
+ubuntu@1e2b49c3d514:/bootstrap-microservices/chapter-2$ curl localhost:3000
+Hello World!ubuntu@1e2b49c3d514:/bootstrap-microservices/chapter-2$
